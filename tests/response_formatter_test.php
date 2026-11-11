@@ -39,6 +39,7 @@ final class response_formatter_test extends \advanced_testcase {
      * Line breaks (<br> and <br />) are converted to newlines so words do not run together.
      */
     public function test_html_line_breaks_become_newlines(): void {
+
         $answer = 'line one<br>line two<br />line three';
         $this->assertSame("line one\nline two\nline three", response_formatter::to_feedback_text($answer, FORMAT_HTML));
         $this->assertSame("line one\nline two\nline three", response_formatter::to_spellcheck_text($answer, FORMAT_HTML));
